@@ -11,10 +11,9 @@ const generateQuiz = async (req, res) => {
       });
     }
 
-    const pdfText = await extractTextFromPDF(req.file.path);
+    const pdfText = await extractTextFromPDF(req.file.buffer);
 
     if (!pdfText || pdfText.trim().length === 0) {
-      fs.unlinkSync(req.file.path);
 
       return res.status(400).json({
         success: false,
@@ -54,7 +53,6 @@ quiz = quiz.filter((q) => {
   return true;
 });
 
-    fs.unlinkSync(req.file.path);
 
     res.status(200).json({
       success: true,
@@ -64,9 +62,6 @@ quiz = quiz.filter((q) => {
   } catch (error) {
     console.error(error);
 
-    if (req.file && fs.existsSync(req.file.path)) {
-      fs.unlinkSync(req.file.path);
-    }
 
     let message = "Failed to generate quiz.";
 

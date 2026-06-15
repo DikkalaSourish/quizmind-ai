@@ -3,8 +3,21 @@ const pdf = require("pdf-parse");
 
 async function extractTextFromPDF(filePath) {
   try {
-    const dataBuffer = fs.readFileSync(filePath);
-    const data = await pdf(dataBuffer);
+    const pdf = require("pdf-parse");
+
+async function extractTextFromPDF(buffer) {
+  try {
+    const data = await pdf(buffer);
+    return data.text;
+  } catch (error) {
+    console.error("PDF Read Error:", error);
+    throw new Error("Failed to read PDF.");
+  }
+}
+
+module.exports = {
+  extractTextFromPDF,
+};
 
     let text = data.text;
 
