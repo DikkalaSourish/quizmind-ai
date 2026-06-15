@@ -194,7 +194,7 @@ async function generateQuizFromPDF(file, settings) {
 
   try {
     const response = await axios.post(
-      "http://localhost:5000/api/quiz/generate",
+  `${import.meta.env.VITE_API_URL}/api/quiz/generate`,
       formData,
       {
         headers: {
