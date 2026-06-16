@@ -7,6 +7,9 @@
 ![Gemini](https://img.shields.io/badge/Google-Gemini%202.5%20Flash-orange?logo=google)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
+## 🔗 🌐 Live Demo
+👍**Try QuizMind AI here** : https://quizmind-ai-iota.vercel.app/
+
 ## 📖 Overview
 
 **QuizMind AI** is an AI-powered web application that automatically generates quizzes from uploaded PDF documents. It uses **Google Gemini 2.5 Flash** to analyze study material and create meaningful multiple-choice questions with explanations.
